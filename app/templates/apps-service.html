@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-wrapper" style="margin-left: 15px;font-family: Arial, sans-serif; font-size: 16px;">
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page Title and Breadcrumbs -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Update Service</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Service</a></li>
+                            <li class="breadcrumb-item active">Update</li>
+                        </ol>
+                    </div><!--end page-title-box-->
+                </div><!--end col-->
+            </div><!--end row-->
+            <!-- End Page Title and Breadcrumbs -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h4 class="card-title">Update Service Form</h4>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end card-header-->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                <form id="service-form" action="/services/{{ service.id }}">
+                                    <div class="form-group">
+                                        <label class="form-label" for="serviceName">Service Name</label>
+                                        <input type="text" class="form-control" value="{{ service.name }}" id="serviceName" name="name" placeholder="Enter service name" required>
+                                    </div><!--end form-group-->
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="serviceDescription">Description</label>
+                                        <textarea class="form-control" rows="5" id="serviceDescription" name="description" placeholder="Write here.." required>{{ service.description }}</textarea>
+                                    </div><!--end form-group-->
+
+                                    <button type="button" class="btn btn-soft-primary btn-sm" onclick="submitForm()">Submit</button>
+                                    <button type="button" class="btn btn-soft-danger btn-sm" onclick="window.location.href='/service_table/'">Cancel</button>
+                                </form>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-fluid-->
+    </div><!--end page-content-->
+</div><!--end page-wrapper-->
+
+
+
+{% endblock %}

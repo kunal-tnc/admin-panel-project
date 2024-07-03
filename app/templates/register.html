@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css">
+    <title>Register</title>
+
+</head>
+<body>
+    <div class="login-container">
+        <h2>User Registration</h2>
+        <form id="login-form" action="/register" method="post" onsubmit="registerUser(event)">
+    <!-- Form fields for username, password, and email -->
+    <div class="form-control">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <span class="error" id="username-error">Username is required</span>
+    </div>
+    <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error" id="password-error">Password is required</span>
+    </div>
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="email-error">Email is required</span>
+    </div>
+    <button type="submit" class="login-btn">Register</button>
+            <a href="/">Already have an account? Login here</a>
+</form>
+        <div class="message" id="message"></div>
+    </div>
+<script>
+async function registerUser(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('login-form');
+    const formData = new FormData(form);
+
+    const user = {
+        username: formData.get('username'),
+        password: formData.get('password'),
+        email: formData.get('email')
+    };
+
+    const messageDiv = document.getElementById('message');
+
+    try {
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+
+        // Check if response status indicates success (2xx)
+        if (response.ok) {
+            let data;
+            try {
+                // Try to parse the response as JSON
+                data = await response.json();
+            } catch (jsonError) {
+                // If parsing fails, handle the situation gracefully
+                console.warn('Failed to parse JSON response:', jsonError);
+            }
+
+            console.log('Registration successful:', data);
+
+            // Display success message
+            messageDiv.textContent = 'Registration successful!';
+            messageDiv.className = 'message success';
+            messageDiv.style.display = 'block';
+
+            // Optionally, reset the form
+            form.reset();
+        } else {
+            // Handle non-successful HTTP response statuses
+            throw new Error(`Failed to register. Status: ${response.status} ${response.statusText}`);
+        }
+    } catch (error) {
+        console.error('Error registering user:', error);
+
+        // Display error message
+        messageDiv.textContent = `Error registering user: ${error.message}`;
+        messageDiv.className = 'message error';
+        messageDiv.style.display = 'block';
+    }
+}
+
+</script>
+</body>
+</html>

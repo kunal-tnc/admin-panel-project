@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block content %}
+
+
+        <div class="page-wrapper" style="margin-left: 15px; font-family: Arial, sans-serif; font-size: 16px;">
+    <!-- Page Content-->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="page-title">Create Service</h4>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Dastone</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Service</a></li>
+                                    <li class="breadcrumb-item active">Create</li>
+                                </ol>
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end page-title-box-->
+                </div><!--end col-->
+            </div><!--end row-->
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h4 class="card-title">Create Service Form</h4>
+                                    <p class="text-muted mb-0">Basic example to create project form styles.</p>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end card-header-->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form id="serviceForm">
+                                        <div class="form-group">
+                                            <label class="form-label" for="serviceName">Service Name :</label>
+                                            <input type="text" class="form-control" id="serviceName" name="name" placeholder="Enter service name" required>
+                                        </div><!--end form-group-->
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="serviceDescription">Description</label>
+                                            <textarea class="form-control" rows="5" id="serviceDescription" name="description" placeholder="Write here.." required></textarea>
+                                        </div><!--end form-group-->
+
+                                        <button type="submit" class="btn btn-soft-primary btn-sm">Submit</button>
+                                        <button type="button" class="btn btn-soft-danger btn-sm" onclick="window.location.href='/service_table/'">Cancel</button>
+                                    </form> <!--end form-->
+                                </div><!--end col-->
+
+                            </div><!--end row-->
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div><!--end col-->
+            </div><!--end row-->
+
+        </div><!-- container -->
+
+    </div>
+    <!-- end page content -->
+</div>
+<!-- end page-wrapper -->
+
+{% endblock %}

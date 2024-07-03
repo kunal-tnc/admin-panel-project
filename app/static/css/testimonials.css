@@ -1,0 +1,23 @@
+        body {
+            font-family: Arial, sans-serif; /* Optional: set a consistent font family */
+        }
+        .page-title, .card-header button, .card-header button a, .card-body, .table-responsive, .table, .table th, .table td, .green-button, .delete-button, .green-button a, .delete-button a {
+            font-size: 16px; /* Change this to your desired font size */
+        }
+
+        .card-header .green-button, .delete-button {
+            background-color: white; /* Ensure button backgrounds are white */
+        }
+        .green-button, .delete-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #e3ebf6;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .table th, .table td {
+            color: #000; /* Ensure table text color is black */
+        }
