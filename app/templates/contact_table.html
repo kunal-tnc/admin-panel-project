@@ -25,7 +25,7 @@
                                                     <h5 class="mt-0 mb-1">{{ contact.name }}</h5>
                                                     <p class="mb-0 text-muted">{{ contact.email }}</p>
                                                     <p class="mb-0 text-muted">{{ contact.phone }}</p>
-                                                    <p class="mb-0">{{ contact.message }}</p>
+                                                    <p class="mb-0 short-message">{{ contact.message }}</p>
                                                 </div>
                                             </div><!--end media-->
                                             <div class="row mt-2">
@@ -75,7 +75,21 @@
         </div><!--end container-fluid-->
     </div><!--end content-->
 </div><!--end main-panel-->
+<script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const truncateLength = 20;  // Adjust the length as needed
+            const elements = document.querySelectorAll('.short-message');
 
+            elements.forEach(element => {
+                const originalText = element.textContent;
+                if (originalText.length > truncateLength) {
+                    const truncatedText = originalText.slice(0, truncateLength) + '...';
+                    element.textContent = truncatedText;
+                    element.title = originalText;  // Optionally, set the full text as a tooltip
+                }
+            });
+        });
+    </script>
 <script>
 document.querySelectorAll('.delete-button').forEach(button => {
     button.addEventListener('click', async function(event) {
