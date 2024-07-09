@@ -1,5 +1,5 @@
         body {
-            font-family: Arial, sans-serif; /* Optional: set a consistent font family */
+            font-family: Roboto, sans-serif; /* Optional: set a consistent font family */
         }
         .page-title, .card-header button, .card-header button a, .card-body, .table-responsive, .table, .table th, .table td, .green-button, .delete-button, .green-button a, .delete-button a {
             font-size: 16px; /* Change this to your desired font size */

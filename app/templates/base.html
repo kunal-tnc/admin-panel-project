@@ -19,6 +19,11 @@
         <link href="/static/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
         <link href="/static/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
         <link href="/static/css/app.min.css" rel="stylesheet" type="text/css" />
+        <!-- DataTables -->
+        <link href="/static/plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="/static/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 <body class="dark-sidenav">
@@ -43,7 +48,6 @@
                         <a href="javascript: void(0);"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                         <ul class="nav-second-level" aria-expanded="false">
                             <li class="nav-item"><a class="nav-link" href="/index"><i class="ti-control-record"></i>Analytics</a></li>
-<!--                            <li class="nav-item"><a class="nav-link" href="sales-index.html"><i class="ti-control-record"></i>Sales</a></li>-->
                         </ul>
                     </li>
                     <li>
@@ -65,7 +69,7 @@
             </div>
         </div>
         <!-- end left-sidenav-->
-        <div class="page-wrapper" style="font-family: Arial, sans-serif; font-size: 16px;">
+        <div class="page-wrapper">
             <!-- Top Bar Start -->
             <div class="topbar">
                 <!-- Navbar -->
@@ -126,6 +130,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
     <!-- App js -->
     <script src="/static/js/app.js"></script>
+     <!-- Required datatable js -->
+        <script src="/static/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="/static/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+
+         <!-- Buttons examples -->
+        <script src="/static/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="/static/plugins/datatables/buttons.bootstrap5.min.js"></script>
+        <script src="/static/plugins/datatables/jszip.min.js"></script>
+        <script src="/static/plugins/datatables/pdfmake.min.js"></script>
+        <script src="/static/plugins/datatables/vfs_fonts.js"></script>
+        <script src="/static/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="/static/plugins/datatables/buttons.print.min.js"></script>
+        <script src="/static/plugins/datatables/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="/static/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="/static/plugins/datatables/responsive.bootstrap4.min.js"></script>
+        <script src="/static/pages/jquery.datatable.init.js"></script>
 
 
 
